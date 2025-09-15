@@ -3,7 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import { Avatar as DefaultAvatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-const avatorVariants = cva("black rounded-full overflow-hidden", {
+const avatorVariants = cva("block rounded-full overflow-hidden", {
   variants: {
     size: {
       sm: "size-7",
@@ -29,7 +29,7 @@ export default function Avatar({ size }: Props) {
     <DefaultAvatar className={cn(avatorVariants({ size }))}>
       <AvatarImage
         className="aspect-square size-full object-cover"
-        src="https://www.istockphoto.com/jp/%E3%83%99%E3%82%AF%E3%82%BF%E3%83%BC/%E3%81%8B%E3%81%8D%E6%B0%B7%E5%A4%8F%E3%81%AE%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%83%99%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-gm1401659421-454829272"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIqqY6TLCGWs7Qr-k8vQczblwJmOe23eypzzQnoH76A20WYAQMRYE169Sx5-xWXE1m5VPCFegBrWq9aC8aVqZLffcMzAc3i7WWAdxoAKbJ2QJhrTLRJRElafcyQ2vWjJrolxACQGjlflSx/s800/kakigoori1_red.png"
       />
       <AvatarFallback>CN</AvatarFallback>
     </DefaultAvatar>
