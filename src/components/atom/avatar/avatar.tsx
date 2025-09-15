@@ -1,6 +1,10 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { Avatar as DefaultAvatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Avatar as DefaultAvatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 const avatorVariants = cva("block rounded-full overflow-hidden", {
@@ -10,19 +14,17 @@ const avatorVariants = cva("block rounded-full overflow-hidden", {
       md: "size-8",
       lg: "size-9",
       xl: "size-10",
-    }
+    },
   },
   defaultVariants: {
-    size: "md"
-  }
-})
+    size: "md",
+  },
+});
 
 type AvatarVariantsProps = VariantProps<typeof avatorVariants>;
-export type Size = AvatarVariantsProps["size"]
+export type Size = AvatarVariantsProps["size"];
 
-type Props = {
-
-} & AvatarVariantsProps
+type Props = {} & AvatarVariantsProps;
 
 export default function Avatar({ size }: Props) {
   return (
@@ -33,5 +35,5 @@ export default function Avatar({ size }: Props) {
       />
       <AvatarFallback>CN</AvatarFallback>
     </DefaultAvatar>
-  )
+  );
 }
