@@ -1,4 +1,4 @@
-import '../src/tailwind.css';
+import '@/app/globals.css'
 import type { Preview } from '@storybook/nextjs-vite'
 
 const preview: Preview = {
