@@ -3,21 +3,27 @@
 // 3.type meta and stories
 
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import Avatar, { Size } from "./avatar";
+import Avatar, { Size, Src } from "./avatar";
 
 const sizeOption: Size[] = ["sm", "md", "lg", "xl"];
+const srcOption: Src[] = ["strawberry", "meron", "blue", "orange"]
 
 const meta = {
   title: "Design System/Atom/Avatar",
   component: Avatar,
   args: {
     size: "md",
+    src: "strawberry",
   },
   argTypes: {
     size: {
       control: { type: "radio" },
       options: sizeOption,
     },
+    src: {
+      control: { type: "radio" },
+      options: srcOption,
+    }
   },
 } satisfies Meta<typeof Avatar>;
 
@@ -44,3 +50,9 @@ export const XLarge = {
     size: "xl",
   },
 } satisfies Story;
+
+export const Strawberry = {
+  args: {
+    src: "strawberry",
+  },
+} satisfies Story
