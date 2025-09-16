@@ -7,13 +7,13 @@ import {
 } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-const avatorVariants = cva("block rounded-full overflow-hidden", {
+const avatorVariants = cva("block rounded-full overflow-hidden border border-black", {
   variants: {
     size: {
-      sm: "size-7",
-      md: "size-8",
-      lg: "size-9",
-      xl: "size-10",
+      sm: "size-14",
+      md: "size-15",
+      lg: "size-16",
+      xl: "size-18",
     },
   },
   defaultVariants: {
@@ -23,17 +23,31 @@ const avatorVariants = cva("block rounded-full overflow-hidden", {
 
 type AvatarVariantsProps = VariantProps<typeof avatorVariants>;
 export type Size = AvatarVariantsProps["size"];
+export type Src = "strawberry" | "meron" | "blue" | "orange";
 
-type Props = {} & AvatarVariantsProps;
+type Props = {
+  src?: Src;
+} & AvatarVariantsProps;
 
-export default function Avatar({ size }: Props) {
+const imageMap = {
+  strawberry: "/strawberry.png",
+  meron: "/meron.png",
+  blue: "/blue.png",
+  orange: "/orange.png",
+};
+
+export default function Avatar({ size, src = "strawberry" }: Props) {
+  const imageSrc = src ? imageMap[src] : imageMap.strawberry;
+
   return (
     <DefaultAvatar className={cn(avatorVariants({ size }))}>
       <AvatarImage
         className="aspect-square size-full object-cover"
-        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIqqY6TLCGWs7Qr-k8vQczblwJmOe23eypzzQnoH76A20WYAQMRYE169Sx5-xWXE1m5VPCFegBrWq9aC8aVqZLffcMzAc3i7WWAdxoAKbJ2QJhrTLRJRElafcyQ2vWjJrolxACQGjlflSx/s800/kakigoori1_red.png"
+        src={imageSrc}
       />
-      <AvatarFallback>CN</AvatarFallback>
+      <AvatarFallback>
+        {src === "strawberry" ? "Strawberry" : src?.toUpperCase() || "CN"}
+      </AvatarFallback>
     </DefaultAvatar>
   );
 }
