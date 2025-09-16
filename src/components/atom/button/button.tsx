@@ -10,25 +10,25 @@ const buttonVariants = cva(
     "cursor-pointer",
     "not-disabled:hover:brightness-95",
     "focus-visible:outline focus-visible:outline-primary focus-visible: outline-offset-2",
-    "disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 disabled:shadow-none"
+    "disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 disabled:shadow-none",
   ),
   {
     variants: {
       variant: {
         primary: cn(
           "bg-primary text-primary-foreground shadow-lg",
-          "not-disabled:active:scale-95 active:shadow-none"
+          "not-disabled:active:scale-95 active:shadow-none",
         ),
         secondary: cn(
           "bg-secondary text-secondary-foreground",
-          "not-disabled:active:scale-95 active:shadow-none"
+          "not-disabled:active:scale-95 active:shadow-none",
         ),
         text: cn(
           "bg-transparent text-secondary-foreground",
           "not-disabled:hover:bg-gray-50",
-          "not-disabled:active:scale-95 active:shadow-none"
+          "not-disabled:active:scale-95 active:shadow-none",
         ),
-        link: "hover:underline p-0"
+        link: "hover:underline p-0",
       },
       size: {
         sm: "h-8 rounded-sm [&_svg:not([class*='size-'])]:size-3",
@@ -39,14 +39,14 @@ const buttonVariants = cva(
         "icon-md":
           "size-9 p-0 rounded-full [&_svg:not([class*='size-'])]:size-4",
         "icon-lg":
-          "size-10 p-0 rounded-full [&_svg:not([class*='size-'])]:size-5"
-      }
+          "size-10 p-0 rounded-full [&_svg:not([class*='size-'])]:size-5",
+      },
     },
     defaultVariants: {
       variant: "primary",
-      size: "md"
-    }
-  }
+      size: "md",
+    },
+  },
 );
 
 type ButtonVariantProps = VariantProps<typeof buttonVariants>;
