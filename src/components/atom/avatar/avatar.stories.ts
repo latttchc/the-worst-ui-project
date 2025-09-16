@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Avatar, { Size, Src } from "./avatar";
 
 const sizeOption: Size[] = ["sm", "md", "lg", "xl"];
-const srcOption: Src[] = ["strawberry", "meron", "blue", "orange"]
+const srcOption: Src[] = ["strawberry", "meron", "blue", "orange"];
 
 const meta = {
   title: "Design System/Atom/Avatar",
@@ -23,7 +23,7 @@ const meta = {
     src: {
       control: { type: "radio" },
       options: srcOption,
-    }
+    },
   },
 } satisfies Meta<typeof Avatar>;
 
@@ -55,4 +55,4 @@ export const Strawberry = {
   args: {
     src: "strawberry",
   },
-} satisfies Story
+} satisfies Story;

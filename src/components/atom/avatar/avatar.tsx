@@ -7,19 +7,22 @@ import {
 } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-const avatorVariants = cva("block rounded-full overflow-hidden border border-black", {
-  variants: {
-    size: {
-      sm: "size-14",
-      md: "size-15",
-      lg: "size-16",
-      xl: "size-18",
+const avatorVariants = cva(
+  "block rounded-full overflow-hidden border border-black",
+  {
+    variants: {
+      size: {
+        sm: "size-14",
+        md: "size-15",
+        lg: "size-16",
+        xl: "size-18",
+      },
+    },
+    defaultVariants: {
+      size: "md",
     },
   },
-  defaultVariants: {
-    size: "md",
-  },
-});
+);
 
 type AvatarVariantsProps = VariantProps<typeof avatorVariants>;
 export type Size = AvatarVariantsProps["size"];
