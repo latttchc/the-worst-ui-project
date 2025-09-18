@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LinerProgress from "./LinerProgress";
+import LinerProgress from "./LinearProgress";
 
 const meta: Meta<typeof LinerProgress> = {
   title: "Loading/LinerProgress",
@@ -26,5 +26,12 @@ export const Complete: Story = {
 export const Zero: Story = {
   args: {
     value: 0,
+  },
+};
+
+// 自動進行: 0% → 80% (1秒で停止)
+export const AutoProgress: Story = {
+  args: {
+    autoProgress: true,
   },
 };
