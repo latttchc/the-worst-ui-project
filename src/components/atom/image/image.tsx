@@ -15,28 +15,28 @@ const imageVariants = cva("contain", {
       blue: "border-blue-500",
       green: "border-green-500",
       orange: "border-amber-500",
-    }
+    },
   },
   defaultVariants: {
     shape: "square",
     border: "red",
   },
-})
+});
 
-type ImageVariantProps = VariantProps<typeof imageVariants>
-export type Shape = ImageVariantProps["shape"]
-export type Border = ImageVariantProps["border"]
+type ImageVariantProps = VariantProps<typeof imageVariants>;
+export type Shape = ImageVariantProps["shape"];
+export type Border = ImageVariantProps["border"];
 
 export type ImageProps = {
-  src: string
-  alt: string
-  width?: number
-  height?: number
-  className?: string
-  priority?: boolean
-  bordered?: boolean
-  border?: Border
-} & ImageVariantProps
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  priority?: boolean;
+  bordered?: boolean;
+  border?: Border;
+} & ImageVariantProps;
 
 export default function Image({
   src,
@@ -59,9 +59,8 @@ export default function Image({
       className={cn(
         imageVariants({ shape, border }),
         bordered && "border-2",
-        className
+        className,
       )}
     />
-  )
+  );
 }
-
