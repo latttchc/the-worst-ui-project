@@ -67,7 +67,7 @@ export const Caption: Story = {
   args: {
     variant: "caption",
     children: "Caption text",
-    className: "text-blue-500"
+    className: "text-blue-500",
   },
 };
 

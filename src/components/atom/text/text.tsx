@@ -24,15 +24,15 @@ const textVariants = cva("", {
     variant: "body",
     color: "primary",
   },
-})
+});
 
-type TextVariantProps = VariantProps<typeof textVariants>
+type TextVariantProps = VariantProps<typeof textVariants>;
 
 export type TextProps = {
-  children: React.ReactNode
-  as?: "h1" | "h2" | "h3" | "h4" | "p" | "span"
-  className?: string
-} & TextVariantProps
+  children: React.ReactNode;
+  as?: "h1" | "h2" | "h3" | "h4" | "p" | "span";
+  className?: string;
+} & TextVariantProps;
 
 export default function Text({
   children,
