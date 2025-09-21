@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import OrderCard from "./OrderCard";
-
-const flavorOptions = ["strawberry", "blue", "meron", "orange"] as const;
+import OrderCard from "./";
+import { flavorOptions } from "@/types/flavor";
 
 const meta = {
   title: "Design System/Component/OrderCard",
