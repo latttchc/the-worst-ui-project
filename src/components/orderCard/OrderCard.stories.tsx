@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import OrderCard from "./order-card";
+import OrderCard from "./OrderCard";
 
 const flavorOptions = ["strawberry", "blue", "meron", "orange"] as const;
 
