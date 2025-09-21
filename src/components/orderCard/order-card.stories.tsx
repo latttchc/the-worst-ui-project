@@ -9,7 +9,8 @@ const meta = {
   args: {
     flavor: "strawberry",
     title: "プレミアムいちごかき氷",
-    description: "厳選された完熟いちごを使用した贅沢なかき氷です。ふわふわの氷に甘酸っぱいいちごシロップが絶妙にマッチします。",
+    description:
+      "厳選された完熟いちごを使用した贅沢なかき氷です。ふわふわの氷に甘酸っぱいいちごシロップが絶妙にマッチします。",
   },
   argTypes: {
     flavor: {
@@ -47,7 +48,8 @@ export const Blue: Story = {
   args: {
     flavor: "blue",
     title: "ブルーハワイかき氷",
-    description: "南国の青い海をイメージした爽やかなかき氷。夏にぴったりの涼しげな一品です。",
+    description:
+      "南国の青い海をイメージした爽やかなかき氷。夏にぴったりの涼しげな一品です。",
   },
 };
 
@@ -55,7 +57,8 @@ export const Meron: Story = {
   args: {
     flavor: "meron",
     title: "メロンプレミアムかき氷",
-    description: "高級メロンの濃厚な甘さが楽しめる贅沢なかき氷。メロンの香りが口いっぱいに広がります。",
+    description:
+      "高級メロンの濃厚な甘さが楽しめる贅沢なかき氷。メロンの香りが口いっぱいに広がります。",
   },
 };
 
@@ -63,7 +66,8 @@ export const Orange: Story = {
   args: {
     flavor: "orange",
     title: "オレンジフレッシュかき氷",
-    description: "新鮮なオレンジの爽やかな酸味と甘みが絶妙なバランス。ビタミンCたっぷりの健康的な一品。",
+    description:
+      "新鮮なオレンジの爽やかな酸味と甘みが絶妙なバランス。ビタミンCたっぷりの健康的な一品。",
   },
 };
 

@@ -1,42 +1,42 @@
-import React from "react"
-import Card from "../atom/card"
-import Image from "../atom/image"
-import Text from "../atom/text"
-import { cn } from "@/lib/utils"
+import React from "react";
+import Card from "../atom/card";
+import Image from "../atom/image";
+import Text from "../atom/text";
+import { cn } from "@/lib/utils";
 
-type FlavorType = "strawberry" | "blue" | "meron" | "orange"
+type FlavorType = "strawberry" | "blue" | "meron" | "orange";
 
 export type OrderCardProps = {
-  flavor: FlavorType
-  title: string
-  description: string
-  className?: string
-}
+  flavor: FlavorType;
+  title: string;
+  description: string;
+  className?: string;
+};
 
 const flavorMap = {
   strawberry: {
     image: "/strawberry.png",
     border: "red",
     bgColor: "bg-red-50",
-    name: "いちご"
+    name: "いちご",
   },
   meron: {
     image: "/meron.png",
     border: "green",
     bgColor: "bg-green-50",
-    name: "メロン"
+    name: "メロン",
   },
   blue: {
     image: "/blue.png",
     border: "blue",
     bgColor: "bg-blue-50",
-    name: "ブルーハワイ"
+    name: "ブルーハワイ",
   },
   orange: {
     image: "/orange.png",
     border: "orange",
     bgColor: "bg-orange-50",
-    name: "オレンジ"
+    name: "オレンジ",
   },
 };
 
@@ -46,7 +46,7 @@ const OrderCard: React.FC<OrderCardProps> = ({
   description,
   className,
 }) => {
-  const flavorInfo = flavorMap[flavor]
+  const flavorInfo = flavorMap[flavor];
 
   return (
     <Card
@@ -67,20 +67,13 @@ const OrderCard: React.FC<OrderCardProps> = ({
         />
       </div>
       <div className="relative flex flex-col">
-        <Text
-          variant="h3"
-          className=""
-        >
+        <Text variant="h3" className="">
           {title}
         </Text>
-        <Text
-          variant="h4"
-        >
-          {description}
-        </Text>
+        <Text variant="h4">{description}</Text>
       </div>
     </Card>
-  )
+  );
 };
 
-export default OrderCard
+export default OrderCard;
