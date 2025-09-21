@@ -1,2 +1,2 @@
-export { default } from "./order-card";
-export type { OrderCardProps } from "./order-card";
+export { default } from "./OrderCard";
+export type { OrderCardProps } from "./OrderCard"
