@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite"
-import MatchCard from "./MatchCard"
-import { flavorOptions } from "@/types/flavor"
-import OrderCard from "../orderCard"
-import { fn } from "storybook/internal/test"
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import MatchCard from "./MatchCard";
+import OrderCard from "../orderCard";
+import { fn } from "storybook/internal/test";
 
 const meta = {
   title: "Design System/Component/MatchCard",
@@ -15,11 +14,11 @@ const meta = {
     onCardLeftScreen: fn(),
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof MatchCard>
+} satisfies Meta<typeof MatchCard>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof MatchCard>
+type Story = StoryObj<typeof MatchCard>;
 
 export const Default: Story = {
   render: (args) => (
@@ -32,5 +31,5 @@ export const Default: Story = {
         />
       </MatchCard>
     </div>
-  )
-}
+  ),
+};
