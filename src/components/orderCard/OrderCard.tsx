@@ -17,25 +17,25 @@ const flavorMap = {
   strawberry: {
     image: "/strawberry.png",
     border: "red",
-    bgColor: "bg-red-50",
+    bgColor: "bg-red-300",
     name: "いちご",
   },
   meron: {
     image: "/meron.png",
     border: "green",
-    bgColor: "bg-green-50",
+    bgColor: "bg-green-300",
     name: "メロン",
   },
   blue: {
     image: "/blue.png",
     border: "blue",
-    bgColor: "bg-blue-50",
+    bgColor: "bg-blue-300",
     name: "ブルーハワイ",
   },
   orange: {
     image: "/orange.png",
     border: "orange",
-    bgColor: "bg-orange-50",
+    bgColor: "bg-orange-300",
     name: "オレンジ",
   },
 };
