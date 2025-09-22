@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import type { Flavor } from "@/types/flavor"
 import { useEffect, useState, use } from "react"
-import { createOrder, fetchMenu, MenuItem } from "@/api/api"
+import { fetchMenu, MenuItem } from "@/api/api"
 import Text from "@/components/atom/text"
 import MatchCard from "@/components/matchCard"
 import OrderCard from "@/components/orderCard"
