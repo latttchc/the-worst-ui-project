@@ -26,7 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-cyan-300 via-purple-300 to-pink-300 p-4 relative`}
-      >{/*  overflow-hidden */}
+      >
+        {/*  overflow-hidden */}
         {/* 装飾的な背景要素 */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-300 rounded-full blur-xl animate-pulse"></div>

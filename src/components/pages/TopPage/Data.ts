@@ -1,7 +1,7 @@
 import { Store } from "./Type";
 export const stores: Store[] = [
-    // 偽店舗データ
-    {
+  // 偽店舗データ
+  {
     id: 1,
     name: "氷花亭",
     description:
@@ -84,4 +84,4 @@ export const stores: Store[] = [
     emoji: "🍫",
     color: "from-amber-400 to-brown-500",
   },
-]
+];
