@@ -3,6 +3,7 @@
 このドキュメントでは、実装したAPIクライアントとフックの使い方を説明します。
 
 ## 📚 目次
+
 - [基本的な使い方](#基本的な使い方)
 - [React Componentでの使用例](#react-componentでの使用例)
 - [カスタムフックの使い方](#カスタムフックの使い方)
@@ -21,7 +22,7 @@ import {
   fetchOrders,
   updateOrderToWaitingPickup,
   completeOrder,
-} from '@/api/api';
+} from "@/api/api";
 ```
 
 ### 2. メニューの取得
@@ -541,8 +542,8 @@ declare namespace NodeJS {
 ```typescript
 // src/config/api.config.ts
 export const API_CONFIG = {
-  storeId: process.env.NEXT_PUBLIC_STORE_ID || 'KUPSRGYW',
-  apiBase: process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8080',
+  storeId: process.env.NEXT_PUBLIC_STORE_ID || "KUPSRGYW",
+  apiBase: process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8080",
   polling: {
     interval: 2000, // 2秒
     maxRetries: 60, // 最大60回リトライ
@@ -550,8 +551,8 @@ export const API_CONFIG = {
 } as const;
 
 // 使用例
-import { API_CONFIG } from '@/config/api.config';
-import { fetchMenu } from '@/api/api';
+import { API_CONFIG } from "@/config/api.config";
+import { fetchMenu } from "@/api/api";
 
 const menu = await fetchMenu(API_CONFIG.storeId);
 ```
