@@ -130,9 +130,6 @@ const Page = ({ params }: PageProps) => {
     setCurrentIndex((prev) => (prev + 1) % allMenu.length)
   }
 
-  // 現在のカードが注文可能かチェック
-  const isCurrentOrderable = allMenu[currentIndex] && orderableMenu.some(item => item.id === allMenu[currentIndex].id)
-
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 p-4">
