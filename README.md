@@ -51,10 +51,10 @@ npm install
    プロジェクトルートに`.env`ファイルを作成し、必要な環境変数を設定してください。  
    サンプルとして`.env.example`を用意しています。  
 
-   ```
-   NEXT_PUBLIC_API_BASE=
-   NEXT_PUBLIC_STORE_ID=
-   ```
+```
+NEXT_PUBLIC_API_BASE=
+NEXT_PUBLIC_STORE_ID=
+```
 
 4. 開発サーバーを起動
 
