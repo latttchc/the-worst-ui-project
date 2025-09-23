@@ -9,11 +9,13 @@ interface LinearProgressWithLabelProps
   extends Omit<LinearProgressProps, "value"> {
   value?: number;
   autoProgress?: boolean;
+  onComplete?: () => void;
 }
 
 export default function LinearProgressWithLabel({
   value: externalValue,
   autoProgress = false,
+  onComplete,
   ...props
 }: LinearProgressWithLabelProps) {
   const [progress, setProgress] = React.useState(0);
@@ -22,7 +24,7 @@ export default function LinearProgressWithLabel({
     if (!autoProgress) return;
 
     const startTime = Date.now();
-    const phase1Duration = 1000; // Phase 1: 1秒で0%→80%
+    const phase1Duration = 3000; // Phase 1: 3秒で0%→80%
     const phase2Duration = 2000; // Phase 2: 2秒で80%→60%
     const phase3Duration = 2000; // Phase 3: 2秒で60%→92%
     const phase4Duration = 1000; // Phase 4: 1秒停止
@@ -57,13 +59,17 @@ export default function LinearProgressWithLabel({
       } else {
         // 最終段階：100%で完了
         setProgress(100);
+        // 100%になった時にコールバックを呼び出す
+        if (onComplete) {
+          onComplete();
+        }
       }
     };
 
     // 初期化
     setProgress(0);
     requestAnimationFrame(animate);
-  }, [autoProgress]);
+  }, [autoProgress, onComplete]);
 
   // 外部からvalueが渡された場合はそれを使用、そうでなければ内部のprogressを使用
   const currentValue = externalValue !== undefined ? externalValue : progress;
