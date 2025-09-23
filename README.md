@@ -13,8 +13,8 @@
 このプロジェクトは、かき氷注文システムのUIをテーマにしたハッカソンのフロントエンドアプリケーションです。  
 ユーザーは店舗ごとのかき氷メニューから注文したいものを選び、マッチング形式で注文体験を楽しめます。
 
-URL：https://frozen-love.vercel.app/
-X：https://x.com/geek_pjt/status/1970409978281480251
+- URL：https://frozen-love.vercel.app/
+- X：https://x.com/geek_pjt/status/1970409978281480251
 
 ---
 
