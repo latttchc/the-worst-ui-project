@@ -9,7 +9,7 @@ type FlavorType = "strawberry" | "blue" | "meron" | "orange";
 export type OrderCardProps = {
   flavor: FlavorType;
   title: string;
-  description: string;
+  description: React.ReactNode;
   className?: string;
 };
 
@@ -70,7 +70,9 @@ const OrderCard: React.FC<OrderCardProps> = ({
         <Text variant="h3" className="">
           {title}
         </Text>
-        <Text variant="h4">{description}</Text>
+        <Text variant="h4" className="mt-5">
+          {description}
+        </Text>
       </div>
     </Card>
   );

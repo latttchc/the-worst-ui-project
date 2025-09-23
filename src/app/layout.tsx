@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         {/*  overflow-hidden */}
         {/* 装飾的な背景要素 */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="inset-0 opacity-30">
           <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-300 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute top-32 right-16 w-16 h-16 bg-pink-400 rounded-full blur-lg animate-bounce"></div>
           <div
