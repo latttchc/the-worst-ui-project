@@ -134,7 +134,7 @@ const MessageContent = ({ storeId }: { storeId: string }) => {
       const res = await createOrder(storeId, menuId as string);
       router.push(`/order/${storeId}/receipt/${res.id}`);
     } catch (e) {
-      alert("注文処理に失敗しました。時間をおいて再度お試しください。");
+      alert(`注文処理に失敗しました。時間をおいて再度お試しください。\n${e}`);
     }
   };
 
