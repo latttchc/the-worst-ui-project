@@ -209,7 +209,7 @@ const Page = ({ params }: PageProps) => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 max-xl:-mt-55 max-md:-mt-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
       <div className="text-center pt-8 pb-4">
         <Text
           variant="h1"
@@ -223,7 +223,7 @@ const Page = ({ params }: PageProps) => {
       </div>
 
       {/* メインコンテンツ */}
-      <div className="flex flex-col items-center justify-center px-4 pb-8">
+      <div className="flex flex-col items-center justify-center px-4 pb-8 max-md:my-5">
         <div className="relative mb-8">
           {/* メインカード */}
           <MatchCard
@@ -267,9 +267,8 @@ const Page = ({ params }: PageProps) => {
             return (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-green-500" : "bg-green-200"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex ? "bg-green-500" : "bg-green-200"
+                  }`}
               />
             );
           })}
