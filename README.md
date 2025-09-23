@@ -15,6 +15,7 @@
 
 - URL：https://frozen-love.vercel.app/
 - X：https://x.com/geek_pjt/status/1970409978281480251
+- 発表資料: http://x.gd/16Apa
 
 ---
 
