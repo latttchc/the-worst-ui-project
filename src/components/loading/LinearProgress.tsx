@@ -9,11 +9,13 @@ interface LinearProgressWithLabelProps
   extends Omit<LinearProgressProps, "value"> {
   value?: number;
   autoProgress?: boolean;
+  onComplete?: () => void;
 }
 
 export default function LinearProgressWithLabel({
   value: externalValue,
   autoProgress = false,
+  onComplete,
   ...props
 }: LinearProgressWithLabelProps) {
   const [progress, setProgress] = React.useState(0);
@@ -57,6 +59,10 @@ export default function LinearProgressWithLabel({
       } else {
         // 最終段階：100%で完了
         setProgress(100);
+        // 100%になった時にコールバックを呼び出す
+        if (onComplete) {
+          onComplete();
+        }
       }
     };
 
