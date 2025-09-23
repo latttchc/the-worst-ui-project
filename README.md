@@ -49,7 +49,7 @@ npm install
 
 3. `.env`ファイルを作成  
    プロジェクトルートに`.env`ファイルを作成し、必要な環境変数を設定してください。  
-   サンプルとして`.env.example`を用意しています。  
+   サンプルとして`.env.example`を用意しています。
 
 ```
 NEXT_PUBLIC_API_BASE=
