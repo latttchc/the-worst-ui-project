@@ -24,7 +24,7 @@ export default function LinearProgressWithLabel({
     if (!autoProgress) return;
 
     const startTime = Date.now();
-    const phase1Duration = 1000; // Phase 1: 1秒で0%→80%
+    const phase1Duration = 3000; // Phase 1: 3秒で0%→80%
     const phase2Duration = 2000; // Phase 2: 2秒で80%→60%
     const phase3Duration = 2000; // Phase 3: 2秒で60%→92%
     const phase4Duration = 1000; // Phase 4: 1秒停止
@@ -69,7 +69,7 @@ export default function LinearProgressWithLabel({
     // 初期化
     setProgress(0);
     requestAnimationFrame(animate);
-  }, [autoProgress]);
+  }, [autoProgress, onComplete]);
 
   // 外部からvalueが渡された場合はそれを使用、そうでなければ内部のprogressを使用
   const currentValue = externalValue !== undefined ? externalValue : progress;

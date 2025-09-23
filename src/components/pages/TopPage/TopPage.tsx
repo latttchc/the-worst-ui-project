@@ -7,7 +7,6 @@ import Modal from "./Modal";
 import { Store } from "./Type";
 import { stores } from "./Data";
 import { LinearProgressWithLabel } from "@/components/loading";
-import { JSX } from "@emotion/react/jsx-runtime";
 
 function LoadingComponent({ onComplete }: { onComplete?: () => void }) {
   return (
@@ -21,7 +20,6 @@ function LoadingComponent({ onComplete }: { onComplete?: () => void }) {
 
 const TopPage = () => {
   const [selectedStore] = useState<Store | null>(null);
-  const [content, setContent] = useState<JSX.Element | null>(null);
   const [isOpenModal, setIsOpenModal] = React.useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const router = useRouter();
