@@ -9,6 +9,7 @@ import Text from "@/components/atom/text";
 import Button from "@/components/atom/button";
 import type { Flavor } from "@/types/flavor";
 import { conversationFlow } from "@/constants/conversationFlow";
+import { createOrder } from "@/api/api";
 
 export interface MessageType {
   id: string;
@@ -128,8 +129,13 @@ const MessageContent = ({ storeId }: { storeId: string }) => {
     }, 1500);
   };
 
-  const handleOrderComplete = () => {
-    router.push(`/order/${storeId}/complete?menuId=${menuId}&flavor=${flavor}`);
+  const handleOrderComplete = async () => {
+    try {
+      await createOrder(storeId, menuId as string);
+      router.push(`/order/${storeId}/complete?menuId=${menuId}&flavor=${flavor}`);
+    } catch (e) {
+      alert("注文処理に失敗しました。時間をおいて再度お試しください。");
+    }
   };
 
   if (!menuId || !flavor) {
