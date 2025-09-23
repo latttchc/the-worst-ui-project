@@ -149,7 +149,7 @@ const MessageContent = ({ storeId }: { storeId: string }) => {
   }
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="fixed inset-0 flex items-center justify-center bg-black">
       <MessageScreen
         flavor={flavor}
         footer={
