@@ -186,8 +186,9 @@ export default function MatchCard({
   return (
     <div
       ref={cardRef}
-      className={`select-none transition-all duration-300 ease-out ${isDragging ? "cursor-grabbing z-50" : "cursor-grab"
-        } ${className}`}
+      className={`select-none transition-all duration-300 ease-out ${
+        isDragging ? "cursor-grabbing z-50" : "cursor-grab"
+      } ${className}`}
       style={{
         width: `${cardWidth}px`,
         height: `${cardHeight}px`,
@@ -209,13 +210,11 @@ export default function MatchCard({
           className={`absolute top-6 ${showIndicator === "like" ? "left-6" : "right-6"} z-20 animate-pulse`}
         >
           <div
-            className={`px-7 py-7 rounded-full text-white font-bold shadow-lg backdrop-blur-sm ${showIndicator === "like" ? "bg-green-500/90" : "bg-red-500/90"
-              }`}
+            className={`px-7 py-7 rounded-full text-white font-bold shadow-lg backdrop-blur-sm ${
+              showIndicator === "like" ? "bg-green-500/90" : "bg-red-500/90"
+            }`}
           >
-            {showIndicator === "like" ?
-              <Heart size={48} />
-              : <X size={48} />
-            }
+            {showIndicator === "like" ? <Heart size={48} /> : <X size={48} />}
           </div>
         </div>
       )}

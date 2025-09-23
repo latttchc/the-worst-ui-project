@@ -7,7 +7,6 @@ import Modal from "./Modal";
 import { Store } from "./Type";
 import { stores } from "./Data";
 
-
 const TopPage = () => {
   const [selectedStore] = useState<Store | null>(null);
   const [isOpenModal, setIsOpenModal] = React.useState(false);
@@ -17,7 +16,6 @@ const TopPage = () => {
   const handleClick = () => {
     router.push(`/order/${storeId}/match`);
   };
-
 
   return (
     <div className="max-w-md mx-auto space-y-6 relative z-10">
@@ -52,10 +50,11 @@ const TopPage = () => {
             {stores.map((store) => (
               <div
                 key={store.id}
-                className={`cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg rounded-2xl ${selectedStore?.id === store.id
-                  ? "ring-2 ring-pink-400 shadow-lg"
-                  : ""
-                  }`}
+                className={`cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg rounded-2xl ${
+                  selectedStore?.id === store.id
+                    ? "ring-2 ring-pink-400 shadow-lg"
+                    : ""
+                }`}
                 onClick={() => setIsOpenModal(true)}
               >
                 <Card
@@ -64,9 +63,7 @@ const TopPage = () => {
                 >
                   <div className="p-5 h-full flex items-center space-x-4">
                     {/* アイコン */}
-                    <div className="text-4xl flex-shrink-0">
-                      {store.emoji}
-                    </div>
+                    <div className="text-4xl flex-shrink-0">{store.emoji}</div>
 
                     {/* 店舗情報 */}
                     <div className="flex-1 min-w-0">

@@ -75,10 +75,10 @@ const Page = ({ params }: PageProps) => {
         setErr(
           error instanceof Error
             ? error.message
-            : "メニューの取得に失敗しました"
+            : "メニューの取得に失敗しました",
         );
       } finally {
-        setLoading(true)
+        setLoading(true);
       }
     })();
   }, [storeId]);
@@ -132,7 +132,7 @@ const Page = ({ params }: PageProps) => {
   // ボタンクリック時の処理（即座にインデックスを更新）
   const handleButtonLike = () => {
     const isOrderable = orderableMenu.some(
-      (item) => item.id === allMenu[currentIndex].id
+      (item) => item.id === allMenu[currentIndex].id,
     );
     if (isOrderable) {
       setSelected(allMenu[currentIndex].id);
@@ -243,14 +243,11 @@ const Page = ({ params }: PageProps) => {
             key={currentIndex}
             onSwipe={handleSwipe}
             onCardLeftScreen={handleCardLeftScreen}
-            cardWidth={384}
-            cardHeight={500}
           >
             <OrderCard
               flavor={guessFlavor(allMenu[currentIndex].name)}
               title={allMenu[currentIndex].name}
               description={allMenu[currentIndex].description ?? ""}
-              className=""
             />
           </MatchCard>
         </div>
@@ -281,8 +278,9 @@ const Page = ({ params }: PageProps) => {
             return (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex ? "bg-green-500" : "bg-green-200"
-                  }`}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? "bg-green-500" : "bg-green-200"
+                }`}
               />
             );
           })}
