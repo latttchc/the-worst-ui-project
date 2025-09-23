@@ -32,7 +32,6 @@ jobs:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
     needs: test
-    # Pull Requestではデプロイをスキップ
     if: github.event_name == 'push'
 
     steps:
@@ -51,10 +50,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # .vercelディレクトリを削除
-      - name: Remove .vercel directory
-        run: rm -rf .vercel
-
       - name: Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
         uses: amondnet/vercel-action@v25
@@ -63,6 +58,8 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: "--prod"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./
 
       - name: Deploy to Vercel (Preview)
         if: github.ref == 'refs/heads/develop'
@@ -71,3 +68,5 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./
