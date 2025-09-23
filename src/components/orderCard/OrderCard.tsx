@@ -70,7 +70,9 @@ const OrderCard: React.FC<OrderCardProps> = ({
         <Text variant="h3" className="">
           {title}
         </Text>
-        <Text variant="h4" className="mt-5">{description}</Text>
+        <Text variant="h4" className="mt-5">
+          {description}
+        </Text>
       </div>
     </Card>
   );

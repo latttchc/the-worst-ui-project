@@ -267,8 +267,9 @@ const Page = ({ params }: PageProps) => {
             return (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex ? "bg-green-500" : "bg-green-200"
-                  }`}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? "bg-green-500" : "bg-green-200"
+                }`}
               />
             );
           })}

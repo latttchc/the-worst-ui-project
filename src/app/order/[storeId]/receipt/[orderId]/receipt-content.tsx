@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { fetchOrderById, OrderResponse } from "@/api/api"
-import OrderCard from "@/components/orderCard"
-import Text from "@/components/atom/text"
-import { useEffect, useState } from "react"
-import type { Flavor } from "@/types/flavor"
-import clsx from "clsx"
+import { fetchOrderById, OrderResponse } from "@/api/api";
+import OrderCard from "@/components/orderCard";
+import Text from "@/components/atom/text";
+import { useEffect, useState } from "react";
+import type { Flavor } from "@/types/flavor";
+import clsx from "clsx";
 
 interface ReceiptContentProps {
-  storeId: string
-  orderId: string
+  storeId: string;
+  orderId: string;
 }
 
 const guessFlavor = (name: string): Flavor => {
@@ -19,40 +19,37 @@ const guessFlavor = (name: string): Flavor => {
   return "strawberry";
 };
 
-const ReceiptContent = ({
-  storeId,
-  orderId
-}: ReceiptContentProps) => {
-  const [order, setOrder] = useState<OrderResponse | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [err, setErr] = useState<string | null>(null)
+const ReceiptContent = ({ storeId, orderId }: ReceiptContentProps) => {
+  const [order, setOrder] = useState<OrderResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
     if (!storeId || !orderId) {
-      setErr("URLが不正です")
-      setLoading(false)
-      return
+      setErr("URLが不正です");
+      setLoading(false);
+      return;
     }
-    setLoading(true)
-    setErr(null)
-      ; (async () => {
-        try {
-          const res = await fetchOrderById(storeId, orderId)
-          setOrder(res)
-        } catch (error) {
-          setErr(error instanceof Error ? error.message : String(error))
-        } finally {
-          setLoading(false)
-        }
-      })()
-  }, [storeId, orderId])
+    setLoading(true);
+    setErr(null);
+    (async () => {
+      try {
+        const res = await fetchOrderById(storeId, orderId);
+        setOrder(res);
+      } catch (error) {
+        setErr(error instanceof Error ? error.message : String(error));
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [storeId, orderId]);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <span>読み込み中...</span>
       </div>
-    )
+    );
   }
 
   if (err) {
@@ -60,11 +57,11 @@ const ReceiptContent = ({
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <span className="text-red-600">{err}</span>
       </div>
-    )
+    );
   }
 
   if (!order) {
-    return null
+    return null;
   }
 
   return (
@@ -86,7 +83,7 @@ const ReceiptContent = ({
               "text-3xl",
               order.status === "completed" && "text-pink-800",
               order.status === "waitingPickup" && "text-pink-700",
-              order.status === "pending" && "text-pink-600"
+              order.status === "pending" && "text-pink-600",
             )}
           >
             {order.status === "completed" && "完了"}
@@ -99,7 +96,7 @@ const ReceiptContent = ({
         className="text-center"
       />
     </div>
-  )
-}
+  );
+};
 
-export default ReceiptContent
+export default ReceiptContent;
