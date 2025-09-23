@@ -9,6 +9,7 @@ import MatchCard from "@/components/matchCard";
 import OrderCard from "@/components/orderCard";
 import Button from "@/components/atom/button";
 import { X, Heart } from "lucide-react";
+import { LinearProgressWithLabel } from "@/components/loading";
 
 interface PageProps {
   params: Promise<{
@@ -34,6 +35,16 @@ function pickRandom<T>(arr: T[], n: number): T[] {
   return copy.slice(0, n);
 }
 
+function LoadingComponent({ onComplete }: { onComplete?: () => void }) {
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-80 max-w-sm">
+        <LinearProgressWithLabel autoProgress={true} onComplete={onComplete} />
+      </div>
+    </div>
+  );
+}
+
 const Page = ({ params }: PageProps) => {
   const router = useRouter();
   const { storeId } = use(params);
@@ -47,7 +58,6 @@ const Page = ({ params }: PageProps) => {
 
   useEffect(() => {
     if (!storeId) return;
-    setLoading(true);
     setErr(null);
     (async () => {
       try {
@@ -65,10 +75,10 @@ const Page = ({ params }: PageProps) => {
         setErr(
           error instanceof Error
             ? error.message
-            : "メニューの取得に失敗しました",
+            : "メニューの取得に失敗しました"
         );
       } finally {
-        setLoading(false);
+        setLoading(true)
       }
     })();
   }, [storeId]);
@@ -122,7 +132,7 @@ const Page = ({ params }: PageProps) => {
   // ボタンクリック時の処理（即座にインデックスを更新）
   const handleButtonLike = () => {
     const isOrderable = orderableMenu.some(
-      (item) => item.id === allMenu[currentIndex].id,
+      (item) => item.id === allMenu[currentIndex].id
     );
     if (isOrderable) {
       setSelected(allMenu[currentIndex].id);
@@ -137,12 +147,15 @@ const Page = ({ params }: PageProps) => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 p-4">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mb-4"></div>
-        <Text variant="body" color="muted">
-          メニューを読み込み中...
-        </Text>
-      </div>
+      <>
+        <LoadingComponent
+          onComplete={() => {
+            setTimeout(() => {
+              setLoading(false);
+            }, 1000);
+          }}
+        />
+      </>
     );
   }
 
@@ -237,6 +250,7 @@ const Page = ({ params }: PageProps) => {
               flavor={guessFlavor(allMenu[currentIndex].name)}
               title={allMenu[currentIndex].name}
               description={allMenu[currentIndex].description ?? ""}
+              className=""
             />
           </MatchCard>
         </div>
