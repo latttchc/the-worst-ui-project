@@ -25,21 +25,13 @@ const TopPage = () => {
   const router = useRouter();
 
   const CorrectStore = () => {
-    console.log("Correct Store Clicked");
     // 表示を切り替え
     setShowLoading(true);
-    // // 3秒後に元の表示に戻す
-    // setTimeout(() => {
-    //   setShowLoading(false);
-    //   setContent(null);
-    // }, 3000);
   };
 
   const storeId = process.env.NEXT_PUBLIC_STORE_ID;
   const handleProgressComplete = () => {
-    // progressが100%になった時の処理
-    console.log("Progress completed!");
-    // 例: 店舗IDを取得してページ遷移
+    // progressが100%になったらページ遷移
     router.push(`/order/${storeId}/match`);
   };
 
