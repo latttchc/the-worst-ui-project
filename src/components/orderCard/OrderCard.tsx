@@ -3,11 +3,10 @@ import Card from "../atom/card";
 import Image from "../atom/image";
 import Text from "../atom/text";
 import { cn } from "@/lib/utils";
-
-type FlavorType = "strawberry" | "blue" | "meron" | "orange";
+import type { Flavor } from "@/types/flavor";
 
 export type OrderCardProps = {
-  flavor: FlavorType;
+  flavor: Flavor;
   title: string;
   description: React.ReactNode;
   className?: string;
